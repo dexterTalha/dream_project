@@ -23,6 +23,8 @@ dependencies:
   page_transition: ^1.1.5
   shared_preferences: ^0.5.6+3
   fluttertoast: ^3.1.3
+  font_awesome_flutter:
+  material_design_icons_flutter: ^4.0.5045
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
