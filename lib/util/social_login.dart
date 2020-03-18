@@ -12,7 +12,7 @@ class SocialLogin extends StatelessWidget {
           child: Text("CONTINUE WITH SOCIAL ACCOUNT",
               style: TextStyle(
                 fontFamily: "Maven",
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w700,
                 color: Colors.black,
               )),

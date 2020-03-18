@@ -1,9 +1,7 @@
+import 'package:dreame_project/screens/otp_verification_screen.dart';
+import 'package:dreame_project/screens/signup_screen.dart';
 import 'package:dreame_project/util/social_login.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/fa_icon.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
@@ -27,7 +25,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
                     FlatButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(
+                          builder: (context) =>OtpScreen()
+                        ));
+                      },
                       child: Text("SKIP",
                           style: TextStyle(
                             fontFamily: "Maven",
@@ -65,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text("LOGIN TO YOUR ACCOUNT",
                       style: TextStyle(
                         fontFamily: "Maven",
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w700,
                         color: Colors.black,
                       )),
@@ -102,7 +104,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontFamily: "Maven",
                           )),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen()));
+                        },
                         child: Text("Create One",
                             style: TextStyle(
                                 decoration: TextDecoration.underline,
@@ -220,89 +224,5 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget socialOptions() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Center(
-          child: Text("CONTINUE WITH SOCIAL ACCOUNT",
-              style: TextStyle(
-                fontFamily: "Maven",
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-              )),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20),
-          child: InkWell(
-              splashColor: Colors.blueAccent,
-              onTap: () {},
-              child: Card(
-                elevation: 6,
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Color(0xff546DEC),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      FaIcon(FontAwesomeIcons.facebookF, color: Colors.white),
-                      Text(
-                        "Continue with Facebook",
-                        style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontFamily: "Maven",
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )),
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0, right: 20),
-          child: InkWell(
-              splashColor: Colors.redAccent,
-              onTap: () {},
-              child: Card(
-                elevation: 6,
-                child: Container(
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Color(0xffDF3535),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      FaIcon(FontAwesomeIcons.googlePlusG, color: Colors.white),
-                      Text(
-                        "Continue with Google",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontFamily: "Maven",
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              )),
-        ),
-      ],
-    );
-  }
+  
 }

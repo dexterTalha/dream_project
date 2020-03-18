@@ -25,6 +25,9 @@ dependencies:
   fluttertoast: ^3.1.3
   font_awesome_flutter:
   material_design_icons_flutter: ^4.0.5045
+  provider: ^4.0.4
+  bloc: ^3.0.0
+  rxdart: ^0.23.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -46,7 +49,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # To add assets to your application, add an assets section,like this:
   assets:
    - assets/images/walkthrough/
   #  - images/a_dot_ham.jpeg
