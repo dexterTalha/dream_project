@@ -1,6 +1,9 @@
+import 'package:dreame_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
+
+import 'home_screen.dart';
 
 class OtpScreen extends StatefulWidget {
   @override
@@ -18,9 +21,14 @@ class _OtpScreenState extends State<OtpScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.black,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
         ),
       ),
       body: SafeArea(
@@ -86,6 +94,8 @@ class _OtpScreenState extends State<OtpScreen> {
                     setState(() {
                       isFilled = true;
                     });
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   }
                   print(isFilled);
                 },
@@ -97,10 +107,14 @@ class _OtpScreenState extends State<OtpScreen> {
                     elevation: 4,
                     onPressed: () {
                       print(isFilled);
-                      if (!isFilled) {
+                      /* if (!isFilled) {
                         Fluttertoast.showToast(msg: "Fill otp");
                         return;
-                      }
+                      } */
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
                     },
                     color: Color(0xff60B243),
                     child: Padding(
